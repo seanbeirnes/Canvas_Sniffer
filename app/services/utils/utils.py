@@ -18,8 +18,13 @@ class Window_Utils():
 
 class Image_Utils():
     def get_image(url, size):
+        from pathlib import Path
         from customtkinter import CTkImage
         from PIL import Image
-        img = Image.open(url)
+
+        path = Path(__file__).parent / url
+
+        img = Image.open(path)
         img = img.resize((img.width // 4, img.height // 4), resample=Image.LANCZOS)
+
         return CTkImage(img, size=size)
