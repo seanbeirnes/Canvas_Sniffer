@@ -13,10 +13,10 @@ from components.labels.static_header_text_value_label import static_header_text_
 # Controlls the main view of the app. Includes the header and main layout.
 
 class App_View_Controller():
-    def __init__(self, master) -> None:
+    def __init__(self, master, app_data) -> None:
         self.master = master
-        self.canvasInstance = "https://something.instructure.com"
-        self.status = "Ready"
+        self.canvasInstance = app_data.app_status.canvas_instance_url
+        self.status = app_data.app_status.status
     
     def init(self):
         self.frame_header = header_frame(self.master)
