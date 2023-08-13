@@ -17,6 +17,5 @@ class Sidebar_Button():
         self.text = text
         self.command = command
 
-    def init(self):
         self.button = ctk.CTkButton(master=self.master, image=self.__light_image, corner_radius=100, fg_color=G.color.COLOR_PRIMARY_2, hover_color=G.color.COLOR_PRIMARY_1, text_color_disabled=G.color.COLOR_DARK, text=self.text, compound="right", command=self.command)
         self.button.pack(padx=G.pad.p_sm, pady=G.pad.p_sm, fill="x")

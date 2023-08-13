@@ -19,4 +19,3 @@ class Flow_Controller():
             master = self.master, 
             app_data = self.app_data
             )
-        app_view_controller.init()

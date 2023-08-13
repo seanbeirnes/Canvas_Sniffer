@@ -8,7 +8,6 @@ class Header():
         self.canvasInstance = app_status.canvas_instance_url
         self.status = app_status.status
 
-    def init(self) -> None:
         self.frame_header = header_frame(self.master)
 
         self.label_canvasInstance = static_header_text_label(
