@@ -15,3 +15,11 @@ class Window_Utils():
         y = win.winfo_screenheight() // 2 - win_height // 2
         win.geometry('{}x{}+{}+{}'.format(width, height, x, y))
         win.deiconify()
+
+class Image_Utils():
+    def get_image(url, size):
+        from customtkinter import CTkImage
+        from PIL import Image
+        img = Image.open(url)
+        img = img.resize((img.width // 4, img.height // 4), resample=Image.LANCZOS)
+        return CTkImage(img, size=size)

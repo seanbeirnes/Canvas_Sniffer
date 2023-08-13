@@ -6,7 +6,7 @@ from views.app.search_courses_view import Search_Courses_View
 # Componenet import
 from components.layout.header import Header
 
-
+from components.frames.sidebar_frame import sidebar_frame
 # Controlls the main view of the app. Includes the header and main layout.
 
 class App_View_Controller():
@@ -18,6 +18,8 @@ class App_View_Controller():
         self.header = Header(master=self.master, app_status=self.app_data.app_status)
         self.header.init()
 
+        sidebar = sidebar_frame(master=self.master)
+
     def update(self, app_data):
         self.app_data = app_data
-        self.header.update()
+        self.header.update(self.app_data.app_status)
