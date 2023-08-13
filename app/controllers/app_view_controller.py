@@ -15,5 +15,9 @@ class App_View_Controller():
         self.app_data = app_data
     
     def init(self):
-        header = Header(master=self.master, app_status=self.app_data.app_status)
-        header.init()
+        self.header = Header(master=self.master, app_status=self.app_data.app_status)
+        self.header.init()
+
+    def update(self, app_data):
+        self.app_data = app_data
+        self.header.update()
