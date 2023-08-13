@@ -1,0 +1,7 @@
+class Colors():
+    COLOR_LIGHT = "#fff"
+    COLOR_PRIMARY_1 = "#61ABBB"
+    COLOR_PRIMARY_2 = "#3B6A83"
+    COLOR_PRIMARY_3 = "#294B5C"
+    COLOR_DARK ="#343434"
+    COLOR_ACCENT ="#E0D583"
