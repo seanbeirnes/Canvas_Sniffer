@@ -12,6 +12,7 @@ class App_View_Controller():
     def __init__(self, master, app_data) -> None:
         self.master = master
         self.app_data = app_data
+        self.state = G.states.app_view.none
     
     def init(self):
         self.header = Header(master=self.master, app_status=self.app_data.app_status)
