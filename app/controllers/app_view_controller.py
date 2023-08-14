@@ -8,7 +8,11 @@ from components.layout.header import Header
 from components.layout.sidebar import Sidebar
 
 # Views improt
+from views.app.search_course_view import Search_Course_View
+from views.app.search_courses_view import Search_Courses_View
+from views.app.settings_view import Settings_View
 from views.app.help_view import Help_View
+from views.app.about_view import About_View
 
 # Controlls the main view of the app. Includes the header and main layout.
 
@@ -35,22 +39,19 @@ class App_View_Controller():
     def setState(self, state):
         self.reset_view()
         if state == G.states.app_view.course:
-            # show relevant view
-            pass
+            self.view = Search_Course_View(self.master)
         elif state == G.states.app_view.courses:
-            # show relevant view
-            pass   
+            self.view = Search_Courses_View(self.master) 
         elif state == G.states.app_view.settings:
-            # show relevant view   
-            pass 
+            self.view = Settings_View(self.master)
         elif state == G.states.app_view.reset:
-            # show relevant view  
+            # Remind user this will reset all settings and cannot be undone
+            # Ask if ok to proceed?
+            # Reset app settings and take user back to startup flow
             pass
         elif state == G.states.app_view.help:
             self.view = Help_View(self.master)   
         elif state == G.states.app_view.about:
-            # show relevant view
-            pass
+            self.view = About_View(self.master)
         
         self.state = state
-        print({self.state})

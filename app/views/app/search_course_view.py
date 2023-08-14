@@ -5,7 +5,7 @@ import customtkinter as ctk
 from components.frames.app_view_frame import app_view_frame
 from components.frames.app_view_card import app_view_card
 
-class Help_View():
+class Search_Course_View():
 
     def __init__(self, master) -> None:
         self.master = master
@@ -13,10 +13,12 @@ class Help_View():
 
         self.frame.columnconfigure(0, weight=1)
         self.frame.rowconfigure(0, weight=1)
-        self.frame.rowconfigure(1, weight=10)
+        self.frame.rowconfigure(1, weight=3)
+        self.frame.rowconfigure(2, weight=1)
 
         self.card_row_0 = app_view_card(self.frame, row=0)
         self.card_row_1 = app_view_card(self.frame, row=1)
+        self.card_row_2 = app_view_card(self.frame, row=2)
 
     def hide(self):
         self.frame.grid_remove()
