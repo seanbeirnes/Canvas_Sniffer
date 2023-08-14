@@ -27,10 +27,11 @@ class Sidebar_Button():
                                   hover_color=G.color.COLOR_ACCENT,
                                   state="disabled",
                                   image=self.__dark_image)
-            self.state = state
+        
         elif state == G.states.sidebar_btn.normal:
             self.button.configure(fg_color=G.color.COLOR_PRIMARY_2,
                                   hover_color=G.color.COLOR_PRIMARY_1,
                                   state="normal",
                                   image=self.__light_image)
-            self.state = state
+        
+        self.state = state

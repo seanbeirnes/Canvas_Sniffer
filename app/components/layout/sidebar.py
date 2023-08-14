@@ -67,33 +67,30 @@ class Sidebar():
         self.button_about.setState(G.states.sidebar_btn.normal)
 
     def setState(self, state):
+        self.reset_buttons()
+
         if state == G.states.sidebar.search_course:
-            self.reset_buttons()
             self.button_searchCourse.setState(G.states.sidebar_btn.active)
             self.__btn_callback(state=G.states.app_view.course)
-            self.state = state
+
         elif state == G.states.sidebar.search_courses:
-            self.reset_buttons()
             self.button_searchCourses.setState(G.states.sidebar_btn.active)
             self.__btn_callback(state=G.states.app_view.courses)
-            self.state = state
+
         elif state == G.states.sidebar.settings:
-            self.reset_buttons()
             self.button_settings.setState(G.states.sidebar_btn.active)
             self.__btn_callback(state=G.states.app_view.settings)
-            self.state = state
+
         elif state == G.states.sidebar.reset:
-            self.reset_buttons()
             self.button_reset.setState(G.states.sidebar_btn.active)
             self.__btn_callback(state=G.states.app_view.reset)
-            self.state = state
+
         elif state == G.states.sidebar.help:
-            self.reset_buttons()
             self.button_help.setState(G.states.sidebar_btn.active)
             self.__btn_callback(state=G.states.app_view.help)
-            self.state = state
+
         elif state == G.states.sidebar.about:
-            self.reset_buttons()
             self.button_about.setState(G.states.sidebar_btn.active)
             self.__btn_callback(state=G.states.app_view.about)
-            self.state = state
+        
+        self.state = state

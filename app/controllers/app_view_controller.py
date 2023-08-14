@@ -6,6 +6,10 @@ from views.app.search_courses_view import Search_Courses_View
 # Componenet import
 from components.layout.header import Header
 from components.layout.sidebar import Sidebar
+
+# Views improt
+from views.app.help_view import Help_View
+
 # Controlls the main view of the app. Includes the header and main layout.
 
 class App_View_Controller():
@@ -13,6 +17,8 @@ class App_View_Controller():
         self.master = master
         self.app_data = app_data
         self.state = G.states.app_view.none
+
+        self.view = None
 
         self.header = Header(master=self.master, app_status=self.app_data.app_status)
 
@@ -22,24 +28,29 @@ class App_View_Controller():
         self.app_data = app_data
         self.header.update(self.app_data.app_status)
 
+    def reset_view(self):
+        if self.view:
+            self.view.hide()
+
     def setState(self, state):
+        self.reset_view()
         if state == G.states.app_view.course:
             # show relevant view
-            self.state = state
+            pass
         elif state == G.states.app_view.courses:
             # show relevant view
-            self.state = state       
+            pass   
         elif state == G.states.app_view.settings:
-            # show relevant view
-            self.state = state     
+            # show relevant view   
+            pass 
         elif state == G.states.app_view.reset:
-            # show relevant view
-            self.state = state     
+            # show relevant view  
+            pass
         elif state == G.states.app_view.help:
-            # show relevant view
-            self.state = state     
+            self.view = Help_View(self.master)   
         elif state == G.states.app_view.about:
             # show relevant view
-            self.state = state
+            pass
         
+        self.state = state
         print({self.state})
