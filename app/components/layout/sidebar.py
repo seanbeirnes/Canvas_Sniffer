@@ -9,8 +9,9 @@ from components.buttons.sidebar_button import Sidebar_Button
 
 
 class Sidebar():
-    def __init__(self, master) -> None:
+    def __init__(self, master, btn_callback) -> None:
         self.master = master
+        self.__btn_callback = btn_callback
         self.state = G.states.sidebar.none
 
         self.sidebar = sidebar_frame(master=self.master)
@@ -69,24 +70,30 @@ class Sidebar():
         if state == G.states.sidebar.search_course:
             self.reset_buttons()
             self.button_searchCourse.setState(G.states.sidebar_btn.active)
+            self.__btn_callback(state=G.states.app_view.course)
             self.state = state
         elif state == G.states.sidebar.search_courses:
             self.reset_buttons()
             self.button_searchCourses.setState(G.states.sidebar_btn.active)
+            self.__btn_callback(state=G.states.app_view.courses)
             self.state = state
         elif state == G.states.sidebar.settings:
             self.reset_buttons()
             self.button_settings.setState(G.states.sidebar_btn.active)
+            self.__btn_callback(state=G.states.app_view.settings)
             self.state = state
         elif state == G.states.sidebar.reset:
             self.reset_buttons()
             self.button_reset.setState(G.states.sidebar_btn.active)
+            self.__btn_callback(state=G.states.app_view.reset)
             self.state = state
         elif state == G.states.sidebar.help:
             self.reset_buttons()
             self.button_help.setState(G.states.sidebar_btn.active)
+            self.__btn_callback(state=G.states.app_view.help)
             self.state = state
         elif state == G.states.sidebar.about:
             self.reset_buttons()
             self.button_about.setState(G.states.sidebar_btn.active)
+            self.__btn_callback(state=G.states.app_view.about)
             self.state = state

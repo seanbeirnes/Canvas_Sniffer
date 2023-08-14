@@ -16,8 +16,30 @@ class App_View_Controller():
 
         self.header = Header(master=self.master, app_status=self.app_data.app_status)
 
-        self.sidebar = Sidebar(master=self.master)
+        self.sidebar = Sidebar(master=self.master, btn_callback=self.setState)
     
     def update(self, app_data):
         self.app_data = app_data
         self.header.update(self.app_data.app_status)
+
+    def setState(self, state):
+        if state == G.states.app_view.course:
+            # show relevant view
+            self.state = state
+        elif state == G.states.app_view.courses:
+            # show relevant view
+            self.state = state       
+        elif state == G.states.app_view.settings:
+            # show relevant view
+            self.state = state     
+        elif state == G.states.app_view.reset:
+            # show relevant view
+            self.state = state     
+        elif state == G.states.app_view.help:
+            # show relevant view
+            self.state = state     
+        elif state == G.states.app_view.about:
+            # show relevant view
+            self.state = state
+        
+        print({self.state})
