@@ -11,6 +11,7 @@ from components.buttons.sidebar_button import Sidebar_Button
 class Sidebar():
     def __init__(self, master) -> None:
         self.master = master
+        self.state = G.states.sidebar.none
 
         self.sidebar = sidebar_frame(master=self.master)
 
@@ -21,37 +22,71 @@ class Sidebar():
                                                   text="Search Course",
                                                   light_image_url="../../assets/icons/course/course_light.png",
                                                   dark_image_url="../../assets/icons/course/course_dark.png",
-                                                  command=None)
+                                                  command=lambda: self.setState(G.states.sidebar.search_course))
 
         self.button_searchCourses = Sidebar_Button(master=self.sidebar,
                                                    text="Search Courses",
                                                    light_image_url="../../assets/icons/courses/courses_light.png",
                                                    dark_image_url="../../assets/icons/courses/courses_dark.png",
-                                                   command=None)
+                                                   command=lambda: self.setState(G.states.sidebar.search_courses))
 
         self.button_settings = Sidebar_Button(master=self.sidebar,
                                                    text="Settings",
                                                    light_image_url="../../assets/icons/gear/gear_light.png",
                                                    dark_image_url="../../assets/icons/gear/gear_dark.png",
-                                                   command=None)
+                                                   command=lambda: self.setState(G.states.sidebar.settings))
 
         self.button_reset = Sidebar_Button(master=self.sidebar,
                                                    text="Reset",
                                                    light_image_url="../../assets/icons/refresh/refresh_light.png",
                                                    dark_image_url="../../assets/icons/refresh/refresh_dark.png",
-                                                   command=None)
+                                                   command=lambda: self.setState(G.states.sidebar.reset))
 
         self.button_help = Sidebar_Button(master=self.sidebar,
                                                    text="Help",
                                                    light_image_url="../../assets/icons/help/help_light.png",
                                                    dark_image_url="../../assets/icons/help/help_dark.png",
-                                                   command=None)
+                                                   command=lambda: self.setState(G.states.sidebar.help))
 
         self.button_about = Sidebar_Button(master=self.sidebar,
                                                    text="About",
                                                    light_image_url="../../assets/icons/info/info_light.png",
                                                    dark_image_url="../../assets/icons/info/info_dark.png",
-                                                   command=None)
+                                                   command=lambda: self.setState(G.states.sidebar.about))
 
         label_version = ctk.CTkLabel(master=self.sidebar, text=G.about.info, justify="left")
         label_version.pack(side="bottom", padx=G.pad.p_md, pady=G.pad.p_md)
+
+    def reset_buttons(self):
+        self.button_searchCourse.setState(G.states.sidebar_btn.normal)
+        self.button_searchCourses.setState(G.states.sidebar_btn.normal)
+        self.button_settings.setState(G.states.sidebar_btn.normal)
+        self.button_reset.setState(G.states.sidebar_btn.normal)
+        self.button_help.setState(G.states.sidebar_btn.normal)
+        self.button_about.setState(G.states.sidebar_btn.normal)
+
+    def setState(self, state):
+        if state == G.states.sidebar.search_course:
+            self.reset_buttons()
+            self.button_searchCourse.setState(G.states.sidebar_btn.active)
+            self.state = state
+        elif state == G.states.sidebar.search_courses:
+            self.reset_buttons()
+            self.button_searchCourses.setState(G.states.sidebar_btn.active)
+            self.state = state
+        elif state == G.states.sidebar.settings:
+            self.reset_buttons()
+            self.button_settings.setState(G.states.sidebar_btn.active)
+            self.state = state
+        elif state == G.states.sidebar.reset:
+            self.reset_buttons()
+            self.button_reset.setState(G.states.sidebar_btn.active)
+            self.state = state
+        elif state == G.states.sidebar.help:
+            self.reset_buttons()
+            self.button_help.setState(G.states.sidebar_btn.active)
+            self.state = state
+        elif state == G.states.sidebar.about:
+            self.reset_buttons()
+            self.button_about.setState(G.states.sidebar_btn.active)
+            self.state = state
