@@ -6,7 +6,7 @@ def header_frame(master):
         master=master, 
         height=40,
         corner_radius=0,
-        fg_color=G.color.COLOR_DARK
+        fg_color=G.color.COLOR_DARK_2
         )
         
     frame.grid(row = 0, column = 0, sticky=ctk.NSEW, columnspan = 2)

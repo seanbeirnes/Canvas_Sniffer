@@ -30,5 +30,5 @@ class Select_Course_card():
         entry_selectCourse = ctk.CTkEntry(self.card,
                                           width=2000,
                                           corner_radius=8,
-                                          fg_color=G.color.COLOR_DARK_BKG)
+                                          fg_color=G.color.COLOR_DARK_3)
         entry_selectCourse.grid(row = 2, column = 1, sticky=ctk.NW, padx=G.pad.p_md, pady=G.pad.p_sm)

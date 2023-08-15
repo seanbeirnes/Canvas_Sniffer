@@ -5,7 +5,7 @@ def sidebar_frame(master):
     frame = ctk.CTkFrame(
             master=master, 
             corner_radius=16,
-            fg_color=G.color.COLOR_DARK
+            fg_color=G.color.COLOR_DARK_2
             )
     
     frame.grid(row = 1, column = 0, sticky=ctk.NSEW, pady=G.pad.p_md, padx=G.pad.p_md)

@@ -5,7 +5,7 @@ def app_view_card(master, row):
     frame = ctk.CTkFrame(
             master=master, 
             corner_radius=16,
-            fg_color=G.color.COLOR_DARK
+            fg_color=G.color.COLOR_DARK_2
             )
     
     frame.grid(row = row, column = 0, sticky=ctk.NSEW, pady=(0, G.pad.p_md), padx=0)

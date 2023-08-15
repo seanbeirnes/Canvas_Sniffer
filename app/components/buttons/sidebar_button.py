@@ -18,7 +18,7 @@ class Sidebar_Button():
         self.command = command
         self.state = G.states.sidebar_btn.normal
 
-        self.button = ctk.CTkButton(master=self.master, image=self.__light_image, corner_radius=100, fg_color=G.color.COLOR_PRIMARY_2, hover_color=G.color.COLOR_PRIMARY_1, text_color_disabled=G.color.COLOR_DARK, text=self.text, compound="right", command=self.command)
+        self.button = ctk.CTkButton(master=self.master, image=self.__light_image, corner_radius=100, fg_color=G.color.COLOR_PRIMARY_2, hover_color=G.color.COLOR_PRIMARY_1, text_color_disabled=G.color.COLOR_DARK_2, text=self.text, compound="right", command=self.command)
         self.button.pack(padx=G.pad.p_sm, pady=G.pad.p_sm, fill="x")
 
     def setState(self, state):

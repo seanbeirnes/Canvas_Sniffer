@@ -10,7 +10,7 @@ from services.utils.utils import Window_Utils
 from services.data import data
 
 # Create window
-window = ctk.CTk(fg_color=G.color.COLOR_DARK_BKG)
+window = ctk.CTk(fg_color=G.color.COLOR_DARK_3)
 
 window.title("Canvas Sniffer")
 window.minsize(width=800, height=600)
