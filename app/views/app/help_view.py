@@ -3,7 +3,7 @@ import customtkinter as ctk
 
 # Componenets improt
 from components.frames.app_view_frame import app_view_frame
-from components.frames.app_view_card import app_view_card
+from components.cards.app_view_card import app_view_card
 
 class Help_View():
 

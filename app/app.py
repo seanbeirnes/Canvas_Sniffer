@@ -1,5 +1,6 @@
 # Main import
 import customtkinter as ctk
+from config.global_config import Global as G
 from controllers.flow_controller import Flow_Controller
 
 # Utils import
@@ -9,7 +10,7 @@ from services.utils.utils import Window_Utils
 from services.data import data
 
 # Create window
-window = ctk.CTk()
+window = ctk.CTk(fg_color=G.color.COLOR_DARK_BKG)
 
 window.title("Canvas Sniffer")
 window.minsize(width=800, height=600)
