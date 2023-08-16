@@ -13,7 +13,7 @@ class Scan_Course_Card():
 
         self.card.columnconfigure(0, weight=100)
         self.card.columnconfigure(1, weight=1)
-        self.card.rowconfigure(0, weight=1)
+        self.card.rowconfigure(0, weight=1, minsize=48)
         self.card.rowconfigure(1, weight=1)
         self.card.rowconfigure(2, weight=1)
         self.card.rowconfigure(3, weight=1)
@@ -27,6 +27,7 @@ class Scan_Course_Card():
         label_total_progress.grid(row = 1, column = 0, sticky = ctk.NW, padx=G.pad.p_md, pady=(0,G.pad.p_sm))
 
         progressBar_total = ctk.CTkProgressBar(self.card, 
+                                               height=16,
                                                fg_color=G.color.COLOR_DARK_3, 
                                                progress_color=G.color.COLOR_PRIMARY_2)
         progressBar_total.grid(row = 2, column = 0, sticky = ctk.NSEW, padx=(G.pad.p_md, 0), pady=(0,G.pad.p_sm))
@@ -39,6 +40,7 @@ class Scan_Course_Card():
         label_task_progress.grid(row = 3, column = 0, columnspan=2, sticky = ctk.NW, padx=G.pad.p_md, pady=(0,G.pad.p_sm))
 
         progressBar_task = ctk.CTkProgressBar(self.card, 
+                                              height=16,
                                                fg_color=G.color.COLOR_DARK_3, 
                                                progress_color=G.color.COLOR_PRIMARY_2)
         progressBar_task.grid(row = 4, column = 0, sticky = ctk.NSEW, padx=(G.pad.p_md, 0), pady=(0,G.pad.p_sm))

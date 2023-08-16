@@ -6,6 +6,7 @@ class Dropdown_Menu():
     def __init__(self, master, values, placeholder, row, column) -> None:
         self.dropdownMenu = ctk.CTkOptionMenu(master=master, 
                                               values=values,
+                                              height=24,
                                               corner_radius=8,
                                               fg_color=G.color.COLOR_PRIMARY_2,
                                               button_color=G.color.COLOR_PRIMARY_3,

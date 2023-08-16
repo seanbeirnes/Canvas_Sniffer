@@ -28,6 +28,7 @@ class Select_Course_card():
         dropdown_selectCourse.set_width(width=168)
 
         entry_selectCourse = ctk.CTkEntry(self.card,
+                                          height=24,
                                           width=2000,
                                           corner_radius=8,
                                           fg_color=G.color.COLOR_DARK_3)
