@@ -22,7 +22,7 @@ class Select_Course_card():
 
         dropdown_selectCourse = Dropdown_Menu(master=self.card,
                                               values=["Course ID", "SIS ID"],
-                                              placeholder="Choose method...",
+                                              placeholder="Select by...",
                                               row=2,
                                               column=0)
         dropdown_selectCourse.set_width(width=168)

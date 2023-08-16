@@ -16,8 +16,8 @@ class Search_Course_View():
 
         self.frame.columnconfigure(0, weight=1)
         self.frame.rowconfigure(0, weight=1)
-        self.frame.rowconfigure(1, weight=50)
-        self.frame.rowconfigure(2, weight=10)
+        self.frame.rowconfigure(1, weight=3)
+        self.frame.rowconfigure(2, weight=1)
 
         self.card_row_0 = Select_Course_card(self.frame, row=0)
         self.card_row_1 = Scan_Settings_Card(self.frame, row=1)

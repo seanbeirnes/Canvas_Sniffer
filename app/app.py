@@ -13,7 +13,7 @@ from services.data import data
 window = ctk.CTk(fg_color=G.color.COLOR_DARK_3)
 
 window.title("Canvas Sniffer")
-window.minsize(width=800, height=600)
+window.minsize(width=900, height=800)
 
 Window_Utils.center_window(window)
 
